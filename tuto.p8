@@ -10,7 +10,6 @@ p.x=5
 p.y=5
 p.dx=0
 p.dy=0
-
 create_snow()
 state=0
 
@@ -44,6 +43,13 @@ end
 function  _update()
 update_camera()
 p.dx=0
+
+
+if check_flag(1,(p.x)/8,(p.y)/8) then
+	state += 1
+	end
+	
+	
 if (btn(0)) p.dx=-1
 if (btn(1)) p.dx=1
 p.x+=p.dx
@@ -58,9 +64,7 @@ end
 p.y+=p.dy
 
 update_snow()
-if check_flag(1,p.dx,p.dy) then
-	state += 1
-	end
+
 	timer+=1
 end
 
