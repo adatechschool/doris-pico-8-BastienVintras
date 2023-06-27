@@ -60,12 +60,14 @@ end
 function update_game()
 update_camera()
 p.dx=0
-if not check_flag(2,p.x/8,p.y/8) then
-  if (btn(0)) p.dx=-1
+if not check_flag(2,(p.x+8)/8,p.y/8) then
+		if (btn(0)) p.dx=-1
+if not check_flag(2,(p.x+0)/8,p.y/8) then
+  
   if (btn(1)) p.dx=1
   p.x+=p.dx
 end
-
+end
 if check_flag(1,(p.x)/8,(p.y)/8) then
 	state += 1
 	end
